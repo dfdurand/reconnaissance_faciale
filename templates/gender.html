@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+
+
+<div class="container">
+<div class="row">
+    <div class="col">
+        <!-- form: upload the image-->
+        
+        <h3 class="display-8"> Application web de reconnaissance faciale </h3>
+        <p> Upload une image (.jpg, .jpeg, .png) , et notre application pourra predire votre nom  </p>
+       
+        <!-- upload image form-->
+
+        <form method="post" action="#" enctype="multipart/form-data">
+           
+            <div class="input-group">
+                <input type="file" name="image_name" required>
+                <input type="submit" value="Upload & prediction" class="btn btn-outline-primary" />
+            </div>
+
+        </form>
+
+    </div>
+    <div class="col-8">
+        <!-- report:  prediction image -->
+
+        {% if fileupload %}
+        <h3> Notre prédiction </h3>
+
+        <img src="/static/predict/prediction_image.jpg" alt="prediction"  class="img-responsive img-centered" width="500" 
+        height="500">
+
+        {%  endif %}
+  </div>
+    <div>
+        <h3> image prédicte à distance</h3>
+        <img src="'static/predict/remote_pred_image.jpg' " alt="prediction-telephone"  class="img-responsive img-centered" width="500" height="500">
+    </div>
+</div>
+
+
+          
+{% endblock %}
